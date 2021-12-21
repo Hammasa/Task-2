@@ -1,0 +1,157 @@
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <title></title>
+
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css" />
+  <!-- hover links -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <!--hover links end-->
+  <link type="text/css" href="css/style.css" rel="stylesheet" />
+
+</head>
+
+<body class="">
+  <section class="page">
+    <div class="row">
+      <div class="col-sm-2 icons text-center">
+        <div class="outer-images screen">
+          <img class="icon" data-id="image" src="img/image.png" alt=""></img>
+          <h3>Images</h3>
+        </div>
+        <div class="outer-text screen">
+          <img class="icon" data-id="text" src="img/text.png" alt=""></img>
+          <h3>Text</h3>
+        </div>
+        <div class="outer-background screen">
+          <img class="icon" data-id="background" src="img/Background.png" alt=""></img>
+          <h3>Background</h3>
+        </div>
+        <div class="outer-background">
+          <a download="canvas_image" href="" class="download-btn"></a>
+          <span class="delete"><i class="fa fa-trash"></i></span>
+        </div>
+      </div>
+      <!-- Colors -->
+      <div class="col-sm-8 p100" id="background">
+        <h2>Default Colors</h2>
+        <div class="colors row">
+          <div class="col-2">
+            <span class="thumb color"></span>
+          </div>
+
+          <div class="col-2">
+            <span class="thumb color"></span>
+          </div>
+
+          <div class="col-2">
+            <span class="thumb color"></span>
+          </div>
+
+          <div class="col-2">
+            <span class="thumb color"></span>
+          </div>
+
+          <div class="col-2">
+            <span class="thumb color"></span>
+          </div>
+
+          <div class="col-2">
+            <span class="thumb color"></span>
+          </div>
+
+          <div class="col-2">
+            <span class="thumb color"></span>
+          </div>
+
+          <div class="col-2">
+            <span class="thumb color"></span>
+          </div>
+
+          <div class="col-2">
+            <span class="thumb color"></span>
+          </div>
+
+          <div class="col-2">
+            <span class="thumb color"></span>
+          </div>
+        </div>
+      </div>
+      <!-- Colors -->
+
+      <!-- Text -->
+      <div class="col-sm-8 p100" id="text">
+        <h2>Text</h2>
+        <label for="size">Heading Size</label>
+        <select name="" id="size" class="form-control">
+        </select>
+        <input type="text" class="heading1 form-control" placeholder="Add a heading">
+        <input type="text" class="heading2 form-control" placeholder="Add a subheading">
+        <input type="text" class="para form-control" placeholder="Add a little bit of body text">
+        <button id="text-done">Done</button>
+      </div>
+      <!-- Text -->
+
+      <!-- Image -->
+      <div class="col-sm-8 p100" id="image">
+        <h2>Image</h2>
+        <div class="row images">
+
+        </div>
+      </div>
+      <!-- Image -->
+
+  </section>
+
+  <!-- Canvas -->
+  <section class="col-sm-12">
+    <div class="output">
+      <canvas width="1300px" height="1200px" id="c"></canvas>
+    </div>
+    </div>
+  </section>
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+  <script type="text/javascript" src="js/my.js"></script>
+  <script src="js/jquery.easing.min.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js"
+    integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/460/fabric.min.js"></script>
+  <script type="text/javascript" src="js/fabrics.js"></script>
+  <script>
+    (() => {
+      for (let i = 10; i <= 60; i += 8) {
+        $('#size').append(`<option value="${i}">${i}</option>`);
+      }
+
+      $('.delete').click(function () {
+        c = new fabric.Canvas('c');
+      })
+    })();
+
+    $('.icons > .screen').on('click', function () {
+      let id = $(this).find('img').attr('data-id');
+      $('#background, #image, #text').css('display', 'none');
+      $('#' + id).css('display', 'block');
+    });
+
+    $.ajax({
+      url: 'https://picsum.photos/v2/list',
+      success: d => {
+        d.forEach(i => {
+          let _img = i.download_url;
+          $('#image .images').append(`<div class="col-md-6"><img src="${_img}" class="img-fluid"/></div>`)
+        });
+        $('.images .col-md-6 img').click(function () { imageToCavas(this) });
+      }
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+*{
+	margin:0px;
+    padding:0px;
+    font-family: 'Inter', sans-serif;
+}
+a, a:hover, a:focus{
+    text-decoration: none;
+    color: initial;
+}
+.p0{
+    padding: 0;
+}
+.p80{
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+.p100{
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.m0{
+    margin: 0
+}
+.mt{
+    margin-top: 20px;
+}
+.mb{
+    margin-bottom: 20px;
+}
+.ml{
+    margin-left: 20px;
+}
+.mr{
+    margin-right: 20px;
+}
+.icon{
+    width: 20%;
+}
+.icons{
+    background: #eee;
+}
+.icons > div{
+    margin: 40px 0;
+}
+.thumb{
+    width: 100%;
+    height: 100px;
+    border-radius: 10px;
+    margin: 5px 0;
+    display: block;
+}
+.thumb.color{
+    background: red;
+}
+.colors .col-2:nth-of-type(1) .thumb.color
+{
+    background-color: #e91e63;
+}
+.colors .col-2:nth-of-type(2) .thumb.color{
+    background-color: #03a9f4;
+}
+.colors .col-2:nth-of-type(3) .thumb.color{
+    background-color: #ff9800;
+}
+.colors .col-2:nth-of-type(4) .thumb.color{
+    background-color: #8bc34a;
+}
+.colors .col-2:nth-of-type(5) .thumb.color{
+    background-color: #ff7043;
+}
+.colors .col-2:nth-of-type(6) .thumb.color{
+    background-color: #795548;
+}
+.colors .col-2:nth-of-type(7) .thumb.color{
+    background-color: #64b554;
+}
+.colors .col-2:nth-of-type(8) .thumb.color{
+    background-color: #464a54;
+}
+.colors .col-2:nth-of-type(9) .thumb.color{
+    background-color: #403b7c;
+}
+.colors .col-2:nth-of-type(10) .thumb.color{
+    background-color: #163955;
+}
+.output{
+    border: solid 1px #563a3a22;
+    background:white;
+    padding: 25px;
+    display: flex;
+    align-items: start;
+    justify-content: center
+}
+.output .canvas{
+    width: 200px;
+    height: 200px;
+    background: red;
+    border-radius: 10px;
+}
+canvas{
+    border: solid 1px #000;
+}
+.hidden{
+    display: none;
+}
+.download-btn{
+    padding: 15px;
+    margin: auto;
+    margin-top: 50px;
+    display: block;
+    background-image: url(../img/download.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: max-content;
+}
+.heading1{
+    font-size: 2em;
+    font-weight: 800;
+}
+.heading2{
+    font-size: 1.5em;
+    font-weight: 500;
+}
+.heading1,.heading2,.para{
+    margin-bottom: 30px;
+    padding: 15px
+}
+#size{
+    margin-bottom: 30px;
+}
+#image, #text{
+    overflow: auto;
+    display: none;
+}
+#text-done{
+    border: solid 1px #ccc;
+    background: #ccc;
+    padding: 7px 30px; 
+    cursor: pointer;
+    transition: all 300ms;
+}
+#text-done:hover{
+    background: #64b554;
+    color: #fff
+}
+.images .col-md-6{
+    margin-bottom: 30px;
+}
+.page #image .row{
+    height: 100vh;
+    overflow: auto;
+}
+.fa-trash{
+    margin-top: 40px;
+}

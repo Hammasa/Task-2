@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Loading...</title>
+	<style type="text/css">
+		body{
+			margin: 0;
+			padding: 0;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+			text-align: center;
+		}
+		h1{
+			flex: 0 0 100%;
+			font-size: 120px;
+			margin: 0;
+		}
+		h3{
+			flex: 0 0 100%;
+			margin: 0;
+		}
+		img{
+			animation: loading infinite 0.8s cubic-bezier(0,0,0,0);
+			max-height: 100%
+		}
+		@keyframes loading{
+			0%{
+				transform: rotate(0deg);
+			}
+			100%{
+				transform: rotate(359deg);
+			}
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<img src="https://tutoruos.000webhostapp.com/loading.png"/>
+		<!--h1>404</h1>
+		<h3>Page not found</h3-->
+	</div>
+	<script type="text/javascript">
+		setInterval(
+			()=>{
+				window.location.href = 'http://tutoruos.000webhostapp.com/';
+			},
+			1000
+			);
+	</script>
+</body>
+</html>
